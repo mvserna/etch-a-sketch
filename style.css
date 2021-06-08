@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container {
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: lightgoldenrodyellow;
+  padding: 30px;
+  border: 3px solid black;
+}
+
+h1 {
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+  background-color: lightpink;
+}
+
+#canvas {
+  display: grid;
+  background-color: aquamarine;
+  padding: 20px;
+  border-color: ;
+  border-right: 2px solid lightslategray;
+  border-left: 2px solid lightslategray;
+  height: 500px;
+  width: 500px;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+}
+
+h3 {
+  display: flex;
+  background-color: burlywood;
+  width: 500px;
+  justify-content: center;
+}
+
+.painted {
+  background-color: black;
+}
