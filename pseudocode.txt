@@ -1,0 +1,7 @@
+
+Prompt user for dimensions
+Set grid columns to match dimensions provided
+Generate divs to fill the grid
+
+Add an event listener to each grid child for mouse over
+On mouse over, change that div's class to painted
