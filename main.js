@@ -24,7 +24,9 @@ function drawGrid(dimension) {
 }
 
 button.addEventListener('click', () => {
-  drawGrid( prompt('How many pixels per side?') );
+  let response = prompt('How many pixels per side? (100 max)');
+  if (response > 100) return
+  drawGrid(response)
 });
 
 drawGrid(16);
