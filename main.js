@@ -13,12 +13,16 @@ function resetGrid() {
   return
 }
 
+
+
 function populateGrid(dimension) {
   for ( i=0 ; i < (dimension*dimension) ; i++) {
     let randomHue = Math.random() * 360;
     let newDiv = document.createElement('div');
+    newDiv.setAttribute('data-hue', `${randomHue}`);
+    newDiv.setAttribute('data-saturation', `${randomHue}`);
     newDiv.setAttribute('data-lightness', '100');
-    newDiv.setAttribute('data-hue', `${randomHue}`)
+ 
     newDiv.style.backgroundColor = 'lightgray';
     canvas.appendChild(newDiv);
   }
@@ -26,9 +30,12 @@ function populateGrid(dimension) {
 }
 
 function paint(e) {
-  let targetLightness = e.target.getAttribute('data-lightness');
   let targetHue = e.target.getAttribute('data-hue');
-  e.target.style.backgroundColor = `hsl(${targetHue}, 100%, ${targetLightness}%)`;
+  let targetSaturation = 100
+  let targetLightness = e.target.getAttribute('data-lightness');
+  if ( paintColor === 'grayscale') { targetSaturation = 0; }
+  e.target.style.backgroundColor = `hsl(${targetHue}, ${targetSaturation}%, ${targetLightness}%)`;
+  
   e.target.setAttribute('data-lightness', `${targetLightness - 10}`)
 }
 
@@ -54,7 +61,6 @@ rainbowButton.addEventListener('click', () => {
 polychromaticButton.addEventListener('click', () => {
   return paintColor = 'polychromatic';
 })
-
 
 resetButton.addEventListener('click', () => {
   let response = prompt('How many pixels per side? (100 max)');
