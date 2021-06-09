@@ -1,6 +1,11 @@
 
 const canvas = document.getElementById('canvas');
-const button = document.getElementById('button');
+const resetButton = document.getElementById('button-reset');
+const grayscaleButton = document.getElementById('button-grayscale');
+const rainbowButton = document.getElementById('button-rainbow');
+const polychromaticButton = document.getElementById('button-polychromatic');
+let paintColor = "grayscale";
+
 
 function paint(e) {
   let targetLightness = e.target.getAttribute('data-lightness');
@@ -35,7 +40,7 @@ function drawGrid(dimension) {
 
 
 
-button.addEventListener('click', () => {
+resetButton.addEventListener('click', () => {
   let response = prompt('How many pixels per side? (100 max)');
   if (response > 100) return
   drawGrid(response)
