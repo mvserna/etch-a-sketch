@@ -5,6 +5,11 @@ const grayscaleButton = document.getElementById('button-grayscale');
 const rainbowButton = document.getElementById('button-rainbow');
 const polychromaticButton = document.getElementById('button-polychromatic');
 let paintColor = "grayscale";
+let rainbowCounter = 0;
+let rainbowArray = [];
+
+
+
 
 function resetGrid() {
   while (canvas.lastElementChild) {
@@ -13,16 +18,19 @@ function resetGrid() {
   return
 }
 
-
+function generateRainbowArray(dimension) {
+  for ( i = 0; i < (dimension*dimension); i++) {
+    rainbowArray.push( i * ( 360 / (dimension*dimension) ) )
+  }
+}
 
 function populateGrid(dimension) {
   for ( i=0 ; i < (dimension*dimension) ; i++) {
     let randomHue = Math.random() * 360;
     let newDiv = document.createElement('div');
-    newDiv.setAttribute('data-hue', `${randomHue}`);
-    newDiv.setAttribute('data-saturation', `${randomHue}`);
+    newDiv.setAttribute('data-random-hue', `${randomHue}`);
     newDiv.setAttribute('data-lightness', '100');
- 
+    newDiv.setAttribute('data-rainbow-hue', 'none')
     newDiv.style.backgroundColor = 'lightgray';
     canvas.appendChild(newDiv);
   }
@@ -30,10 +38,21 @@ function populateGrid(dimension) {
 }
 
 function paint(e) {
-  let targetHue = e.target.getAttribute('data-hue');
+  let randomHue = e.target.getAttribute('data-random-hue');
+  let rainbowHue = e.target.getAttribute('data-rainbow-hue');
+  let targetHue = 0;
   let targetSaturation = 100
   let targetLightness = e.target.getAttribute('data-lightness');
-  if ( paintColor === 'grayscale') { targetSaturation = 0; }
+  if ( paintColor === 'grayscale' ) { targetSaturation = 0; }
+  if ( paintColor === 'rainbow' ) {
+    if ( rainbowHue === 'none' ) {
+      rainbowHue = rainbowArray[rainbowCounter]
+      e.target.setAttribute('data-rainbow-hue', `${rainbowHue}`)
+      rainbowCounter++
+    }
+    targetHue = rainbowHue
+  }
+  if ( paintColor === 'polychromatic' ) { targetHue = randomHue }
   e.target.style.backgroundColor = `hsl(${targetHue}, ${targetSaturation}%, ${targetLightness}%)`;
   
   e.target.setAttribute('data-lightness', `${targetLightness - 10}`)
@@ -70,6 +89,7 @@ resetButton.addEventListener('click', () => {
 
 function drawGrid(dimension) {
   resetGrid();
+  generateRainbowArray(dimension);
   populateGrid(dimension);
   sizeGrid(dimension);
   return;

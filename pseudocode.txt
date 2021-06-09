@@ -5,3 +5,9 @@ Generate divs to fill the grid
 
 Add an event listener to each grid child for mouse over
 On mouse over, change that div's class to painted
+
+Rainbow Mode:
+Populate an array with floats from 0 to 360 based on number of divs
+Declare counter
+During populateGrid assign an attribute data-rainbow="none"
+During paint, if data-rainbow="none" then assign number from the array and increment counter
