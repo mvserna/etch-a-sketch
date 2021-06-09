@@ -18,7 +18,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   background-color: rgb(204, 21, 21);
-  padding: 30px;
+  padding: 20px;
   box-shadow: 5px 10px 5px 5px rgba(0, 0, 0, 0.2);
   border-radius: 50px;
 }
@@ -28,6 +28,7 @@ h1 {
   width: 500px;
   justify-content: center;
   align-items: center;
+  font-size: 40px;
 }
 
 #color-buttons {
@@ -41,6 +42,10 @@ h1 {
   margin: 12px;
   padding: 5px 10px 5px 10px;
   font-size: 16px;
+  color: white;
+  background-color: black;
+  border-radius: 20px;
+  border: 2px solid darkgray;
 }
 
 #canvas {
@@ -61,4 +66,7 @@ h3 {
   width: 500px;
   justify-content: center;
   font-size: 18px;
+  padding-right: 50px;
+  padding-left: 50px;
+  text-align: center;
 }
