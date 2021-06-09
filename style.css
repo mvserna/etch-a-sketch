@@ -36,8 +36,8 @@ h1 {
   border-color: ;
   border-right: 2px solid lightslategray;
   border-left: 2px solid lightslategray;
-  height: 500px;
-  width: 500px;
+  height: 400px;
+  width: 400px;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
 }
