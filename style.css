@@ -9,6 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0,0,0,0.8);
 }
 
 #container {
@@ -16,9 +17,10 @@ body {
   width: 500px;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: lightgoldenrodyellow;
+  background-color: rgb(179, 15, 15);
   padding: 30px;
-  border: 3px solid black;
+  box-shadow: 5px 10px 5px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
 }
 
 h1 {
@@ -26,29 +28,29 @@ h1 {
   width: 500px;
   justify-content: center;
   align-items: center;
-  background-color: lightpink;
+}
+
+#button {
+  margin: 10px;
 }
 
 #canvas {
   display: grid;
-  background-color: aquamarine;
-  padding: 20px;
-  border-color: ;
-  border-right: 2px solid lightslategray;
-  border-left: 2px solid lightslategray;
+  padding: ;
   height: 400px;
   width: 400px;
   grid-template-columns: repeat(16, 1fr);
   grid-template-rows: repeat(16, 1fr);
+  border-right: 20px solid rgb(119, 119, 119);
+  border-bottom: 20px solid darkgray;
+  border-left: 20px solid rgb(36, 36, 36);
+  border-top: 20px solid black;
 }
 
 h3 {
   display: flex;
-  background-color: burlywood;
+  background-color: ;
+  margin-top: 20px;
   width: 500px;
   justify-content: center;
-}
-
-.painted {
-  background-color: black;
 }

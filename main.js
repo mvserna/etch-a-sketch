@@ -19,7 +19,7 @@ function drawGrid(dimension) {
     let newDiv = document.createElement('div');
     newDiv.setAttribute('data-lightness', '100');
     newDiv.setAttribute('data-hue', `${randomHue}`)
-    newDiv.style.backgroundColor = 'lightblue';
+    newDiv.style.backgroundColor = 'lightgray';
     canvas.appendChild(newDiv);
   }
 
