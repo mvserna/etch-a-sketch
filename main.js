@@ -1,6 +1,13 @@
 
 const canvas = document.getElementById('canvas');
 const button = document.getElementById('button');
+let lightness = 100; 
+
+function paint(e) {
+  let randomHue = Math.random() * 360;
+  e.target.style.backgroundColor = `hsl(${randomHue}, 100%, ${lightness-10}%)`;
+  lightness -= 10;
+}
 
 function drawGrid(dimension) {
   while (canvas.lastElementChild) {
@@ -18,10 +25,12 @@ function drawGrid(dimension) {
   let gridDivs = canvas.querySelectorAll('div');
   for ( i = 0; i < gridDivs.length; i++) {
     gridDivs[i].addEventListener('mouseover', 
-      (e) => e.target.style.backgroundColor = 'black' );
+      paint );
   }
   return;
 }
+
+
 
 button.addEventListener('click', () => {
   let response = prompt('How many pixels per side? (100 max)');
