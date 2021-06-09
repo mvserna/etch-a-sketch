@@ -7,15 +7,15 @@
 </head>
 <body>
   <div id="container">
-    <div>
     <h1 id="header">Etch-A-Sketch</h1>
-    <input type="button" value="Grayscale" id="button-grayscale">
-    <input type="button" value="Rainbow" id="button-rainbow">
-    <input type="button" value="Polychromatic" id="button-polychromatic">
+    <div id="color-buttons">
+      <input type="button" value="Grayscale" id="button-grayscale" class="buttons">
+      <input type="button" value="Rainbow" id="button-rainbow" class="buttons">
+      <input type="button" value="Polychromatic" id="button-polychromatic" class="buttons">
     </div>
-    <input id="button-reset" type="button" value="Reset Canvas">
     <div id="canvas"></div>
-    <h3 id="directions">Move the mouse to draw</h3>
+    <input id="button-reset" type="button" value="Reset Canvas" class="buttons">
+    <h3 id="directions">Move the mouse to paint</h3>
   </div>
   <script src="main.js"></script>
 </body>
